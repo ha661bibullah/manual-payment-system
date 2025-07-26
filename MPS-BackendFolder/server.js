@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://688528cbe97060f3af3f2df7--zesty-stroopwafel-b30f2b.netlify.app/coursedetails#'],
+  origin: ['http://localhost:3000', 'https://68852a93ef0ea3cecff205f0--zesty-stroopwafel-b30f2b.netlify.app/CourseDetails.html'],
   credentials: true
 }));
 
