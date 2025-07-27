@@ -1292,75 +1292,6 @@
 
     <script>
         // ==============================================
-        // BACKEND API CONFIGURATION
-        // ==============================================
-
-        const BACKEND_URL = 'https://mps-backend-72ax.onrender.com';
-
-        // Real API functions
-        const backendAPI = {
-            async purchaseCourse(data) {
-                try {
-                    const response = await fetch(`${BACKEND_URL}/api/purchase`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data)
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    
-                    return await response.json();
-                } catch (error) {
-                    console.error('Error purchasing course:', error);
-                    handleApiError(error);
-                    throw error;
-                }
-            },
-            
-            async checkCourseAccess(email, courseId) {
-                try {
-                    const response = await fetch(`${BACKEND_URL}/api/check-access/${encodeURIComponent(email)}/${encodeURIComponent(courseId)}`);
-                    
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    
-                    return await response.json();
-                } catch (error) {
-                    console.error('Error checking course access:', error);
-                    handleApiError(error);
-                    throw error;
-                }
-            },
-            
-            async submitReview(reviewData) {
-                try {
-                    const response = await fetch(`${BACKEND_URL}/api/reviews`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(reviewData)
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    
-                    return await response.json();
-                } catch (error) {
-                    console.error('Error submitting review:', error);
-                    handleApiError(error);
-                    throw error;
-                }
-            }
-        };
-
-        // ==============================================
         // FRONTEND APPLICATION CODE
         // ==============================================
 
@@ -2196,6 +2127,140 @@
     window.onload = init;
 </script>
 
+
+
+
+ <script>
+        // ==============================================
+        // BACKEND API CONFIGURATION
+        // ==============================================
+
+        const BACKEND_URL = 'https://mps-backend-72ax.onrender.com';
+
+        // Real API functions
+        const backendAPI = {
+            async submitManualPayment(data) {
+                try {
+                    const response = await fetch(`${BACKEND_URL}/api/verify-payment`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error submitting payment:', error);
+                    handleApiError(error);
+                    throw error;
+                }
+            }
+        };
+
+        // ==============================================
+        // FRONTEND APPLICATION CODE
+        // ==============================================
+
+        // Show locked message when clicking on locked content
+        function showLockedMessage() {
+            document.getElementById('lockedModal').style.display = 'block';
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            
+            // Clear video/note content when modal closes
+            if (modalId === 'videoModal') {
+                document.getElementById('videoContent').innerHTML = '';
+            } else if (modalId === 'noteModal') {
+                document.getElementById('noteContent').innerHTML = '';
+            }
+        }
+
+        // Handle manual payment form submission
+        document.getElementById('manualPaymentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const paymentData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                txnId: formData.get('txnId'),
+                paymentMethod: formData.get('paymentMethod'),
+                courseId: formData.get('courseId'),
+                amount: 1500,
+                currency: 'BDT'
+            };
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'প্রক্রিয়াধীন... <span class="loading-spinner"></span>';
+            submitBtn.disabled = true;
+            
+            try {
+                // Call backend API to submit payment
+                const response = await backendAPI.submitManualPayment(paymentData);
+                
+                // Show success message
+                document.getElementById('paymentMessage').innerHTML = `
+                    <div class="success">
+                        <i class="fas fa-check-circle"></i> আপনার পেমেন্ট তথ্য সফলভাবে জমা হয়েছে। 
+                        পেমেন্ট ভেরিফিকেশনের পর কোর্সটি একটিভ হবে (২৪ ঘন্টার মধ্যে)।
+                    </div>
+                `;
+                
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeModal('lockedModal');
+                    document.getElementById('paymentMessage').innerHTML = '';
+                    
+                    // Reset form
+                    this.reset();
+                }, 3000);
+                
+            } catch (error) {
+                document.getElementById('paymentMessage').innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-circle"></i> পেমেন্ট জমা দিতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।
+                    </div>
+                `;
+                console.error('Payment submission error:', error);
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Initialize the page
+        function init() {
+            // Set up click handlers for locked content
+            document.querySelectorAll('.video-item.locked').forEach(item => {
+                item.onclick = showLockedMessage;
+            });
+            
+            document.querySelectorAll('.note-item.locked').forEach(item => {
+                item.onclick = showLockedMessage;
+            });
+            
+            // Close modals when clicking outside
+            window.onclick = function(event) {
+                if (event.target.className === 'modal') {
+                    closeModal(event.target.id);
+                }
+            };
+        }
+
+        // Initialize when page loads
+        window.onload = init;
+    </script>
 
 
             
