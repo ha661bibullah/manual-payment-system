@@ -936,7 +936,7 @@
                 <div id="details" class="tab-content active">
                     <div class="content-box">
                         <div class="course-instructor">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="মাওলানা মুনতাহা আহমদ" class="instructor-image">
+                            <img src="https://images.w=200&h=200&fit=crop&crop=face" alt="মাওলানা মুনতাহা আহমদ" class="instructor-image">
                             <div class="instructor-details">
                                 <h3>মাওলানা মুনতাহা আহমদ</h3>
                                 <p>ইবারত বিশেষজ্ঞ, আল-আজহার বিশ্ববিদ্যালয়</p>
@@ -957,8 +957,67 @@
                 <div id="video" class="tab-content">
                     <div class="content-box">
                         <h2 class="content-title">কোর্সের ভিডিও সমূহ</h2>
-                        <div class="video-container" id="videosList">
-                            <!-- Videos will be loaded dynamically -->
+                        <div class="video-container">
+                            <div class="video-item" onclick="openVideoModal('lesson-1')">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">১. ইবারত শিক্ষার গুরুত্ব ও প্রয়োজনীয়তা</div>
+                                <div class="video-duration">৪৫ মিনিট</div>
+                                <div class="video-free">ফ্রি</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-2">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">২. আরবি বর্ণমালা ও উচ্চারণ</div>
+                                <div class="video-duration">৫৫ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-3">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৩. নাহু (ব্যাকরণ) এর মৌলিক ধারণা</div>
+                                <div class="video-duration">১ ঘন্টা</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-4">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৪. সরফ (শব্দতত্ত্ব) এর মৌলিক ধারণা</div>
+                                <div class="video-duration">১ ঘন্টা ১৫ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-5">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৫. বাক্য গঠন ও বিশ্লেষণ</div>
+                                <div class="video-duration">৫০ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-6">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৬. ইবারত পড়ার কৌশল</div>
+                                <div class="video-duration">৪০ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-7">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৭. ইবারত অনুবাদের নিয়মকানুন</div>
+                                <div class="video-duration">১ ঘন্টা ১০ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-8">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৮. কুরআনের ইবারত বিশ্লেষণ</div>
+                                <div class="video-duration">১ ঘন্টা ২০ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-9">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">৯. হাদিসের ইবারত বিশ্লেষণ</div>
+                                <div class="video-duration">১ ঘন্টা ৩০ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
+                            <div class="video-item locked" onclick="showLockedMessage()" data-video-id="lesson-10">
+                                <div class="video-icon">▶️</div>
+                                <div class="video-title">১০. ইবারত শিক্ষার প্রায়োগিক কৌশল</div>
+                                <div class="video-duration">৫৫ মিনিট</div>
+                                <div class="video-lock">🔒</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -966,15 +1025,108 @@
                 <div id="notes" class="tab-content">
                     <div class="content-box">
                         <h2 class="content-title">কোর্সের নোট সমূহ</h2>
-                        <div class="notes-container" id="notesList">
-                            <!-- Notes will be loaded dynamically -->
+                        <div class="notes-container">
+                            <div class="note-item" onclick="openNoteModal('note-1')">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">১. ইবারত শিক্ষার মৌলিক ধারণা</div>
+                                <div class="note-free">ফ্রি</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-2">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">২. আরবি ব্যাকরণের মূল নিয়মাবলী</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-3">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">৩. নাহু শিক্ষার ধাপসমূহ</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-4">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">৪. সরফ শিক্ষার ধাপসমূহ</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-5">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">৫. ইবারত বিশ্লেষণের কৌশল</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-6">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">৬. অনুবাদের নীতিমালা</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-7">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">৭. কুরআনি ইবারতের বৈশিষ্ট্য</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
+                            <div class="note-item locked" onclick="showLockedMessage()" data-note-id="note-8">
+                                <div class="note-icon">📄</div>
+                                <div class="note-title">৮. হাদিসি ইবারতের বৈশিষ্ট্য</div>
+                                <div class="note-lock">🔒</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div id="reviews" class="tab-content">
-                    <div class="reviews-container" id="reviewsList">
-                        <!-- Reviews will be loaded dynamically -->
+                    <div class="reviews-container">
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">আ</div>
+                                <div>
+                                    <div class="reviewer-name">আবু বকর সিদ্দিক</div>
+                                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <div class="review-date">২০ দিন আগে</div>
+                            </div>
+                            <div class="review-text">
+                                অসাধারণ কোর্স! মাওলানা মুনতাহা আহমদ সাহেবের শিক্ষা পদ্ধতি অত্যন্ত কার্যকর। আমি এখন আরবি ইবারত সহজেই পড়তে ও বুঝতে পারি। আল্লাহ তাঁর উত্তম প্রতিদান দিন।
+                            </div>
+                        </div>
+                        
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">ম</div>
+                                <div>
+                                    <div class="reviewer-name">মুহাম্মদ কাসেম</div>
+                                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <div class="review-date">১৫ দিন আগে</div>
+                            </div>
+                            <div class="review-text">
+                                দীর্ঘদিন ধরে আরবি ইবারত নিয়ে সমস্যায় ছিলাম। এই কোর্সটি আমার সমস্যার সমাধান করে দিয়েছে। প্রতিটি লেসন অত্যন্ত সুন্দরভাবে সাজানো।
+                            </div>
+                        </div>
+                        
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">ফ</div>
+                                <div>
+                                    <div class="reviewer-name">ফাতিমা খাতুন</div>
+                                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <div class="review-date">১০ দিন আগে</div>
+                            </div>
+                            <div class="review-text">
+                                মা হিসেবে আমি আমার সন্তানদের আরবি শেখাতে চাইছিলাম। এই কোর্সটি আমাকে সেই যোগ্যতা দিয়েছে। খুবই উপকারী কোর্স।
+                            </div>
+                        </div>
+                        
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="reviewer-avatar">আ</div>
+                                <div>
+                                    <div class="reviewer-name">আব্দুল্লাহ আল মামুন</div>
+                                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                                <div class="review-date">৫ দিন আগে</div>
+                            </div>
+                            <div class="review-text">
+                                মাদরাসার শিক্ষক হিসেবে এই কোর্সটি আমার শিক্ষকতার মান অনেক বৃদ্ধি করেছে। ছাত্রদের কাছে এখন আরো সহজভাবে বিষয়টি উপস্থাপন করতে পারি।
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="review-form hidden" id="reviewForm">
@@ -1140,107 +1292,10 @@
 
     <script>
         // ==============================================
-        // API SERVICE FOR BACKEND COMMUNICATION
+        // FRONTEND APPLICATION CODE
         // ==============================================
-        const backendAPI = {
-            baseUrl: 'https://mps-backend-72ax.onrender.com', // Change to your production URL
-            
-            // Get course details
-            async getCourseDetails(courseId) {
-                const response = await fetch(`${this.baseUrl}/courses/${courseId}`);
-                return await response.json();
-            },
-            
-            // Get course videos
-            async getCourseVideos(courseId) {
-                const response = await fetch(`${this.baseUrl}/courses/${courseId}/videos`);
-                return await response.json();
-            },
-            
-            // Get course notes
-            async getCourseNotes(courseId) {
-                const response = await fetch(`${this.baseUrl}/courses/${courseId}/notes`);
-                return await response.json();
-            },
-            
-            // Get course reviews
-            async getCourseReviews(courseId) {
-                const response = await fetch(`${this.baseUrl}/courses/${courseId}/reviews`);
-                return await response.json();
-            },
-            
-            // Check course access
-            async checkCourseAccess(courseId, token) {
-                const response = await fetch(`${this.baseUrl}/check-access/${courseId}`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
-                return await response.json();
-            },
-            
-            // Purchase course
-            async purchaseCourse(purchaseData, token) {
-                const response = await fetch(`${this.baseUrl}/purchase`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify(purchaseData)
-                });
-                return await response.json();
-            },
-            
-            // Submit review
-            async submitReview(reviewData, token) {
-                const response = await fetch(`${this.baseUrl}/reviews`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify(reviewData)
-                });
-                return await response.json();
-            },
-            
-            // Verify manual payment
-            async verifyPayment(paymentData, token) {
-                const response = await fetch(`${this.baseUrl}/verify-payment`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify(paymentData)
-                });
-                return await response.json();
-            }
-        };
 
-        // Auth Service for handling authentication
-        const authService = {
-            getToken() {
-                return localStorage.getItem('authToken');
-            },
-            
-            setToken(token) {
-                localStorage.setItem('authToken', token);
-            },
-            
-            removeToken() {
-                localStorage.removeItem('authToken');
-            },
-            
-            isAuthenticated() {
-                return !!this.getToken();
-            }
-        };
-
-        // ==============================================
-        // APPLICATION STATE MANAGEMENT
-        // ==============================================
+        // Course access state management (persistent across page refresh)
         let courseAccess = {
             isPurchased: false,
             userEmail: null,
@@ -1249,227 +1304,7 @@
             pendingUntil: null
         };
 
-        // Load course access state from localStorage
-        function loadCourseState() {
-            try {
-                const savedState = localStorage.getItem('courseAccess_practical_ibarot');
-                if (savedState) {
-                    courseAccess = JSON.parse(savedState);
-                }
-            } catch (error) {
-                console.log('Error loading course state:', error);
-            }
-        }
-
-        // Save course access state to localStorage
-        function saveCourseState() {
-            try {
-                localStorage.setItem('courseAccess_practical_ibarot', JSON.stringify(courseAccess));
-            } catch (error) {
-                console.log('Error saving course state:', error);
-            }
-        }
-
-        // ==============================================
-        // UI UPDATE FUNCTIONS
-        // ==============================================
-        function updateCourseUI(courseDetails, videos, notes, reviews) {
-            // Update course title if needed
-            document.querySelector('header h1').textContent = courseDetails.title;
-            
-            // Update instructor section
-            document.querySelector('.instructor-details h3').textContent = courseDetails.instructor;
-            
-            // Update pricing section
-            document.querySelector('.current-price').textContent = `৳ ${courseDetails.discountedPrice}`;
-            document.querySelector('.original-price').textContent = `৳ ${courseDetails.price}`;
-            
-            // Update stats
-            document.querySelectorAll('.stat-item')[0].querySelector('span:last-child').textContent = 
-                `${courseDetails.stats.totalStudents}+ শিক্ষার্থী`;
-            document.querySelectorAll('.stat-item')[1].querySelector('span:last-child').textContent = 
-                `${courseDetails.stats.totalVideos}টি ভিডিও লেসন`;
-            document.querySelectorAll('.stat-item')[2].querySelector('span:last-child').textContent = 
-                `মোট ${courseDetails.stats.totalHours} ঘন্টা`;
-            document.querySelectorAll('.stat-item')[3].querySelector('span:last-child').textContent = 
-                `${courseDetails.stats.totalNotes}টি পিডিএফ নোট`;
-            
-            // Update "What you'll learn" section
-            const learnList = document.querySelector('#what-you-learn ul');
-            learnList.innerHTML = '';
-            courseDetails.whatYouLearn.forEach(item => {
-                const li = document.createElement('li');
-                li.style.marginBottom = '10px';
-                li.style.paddingLeft = '25px';
-                li.style.position = 'relative';
-                li.innerHTML = `
-                    <span style="position: absolute; left: 0; color: var(--secondary-color);">✓</span>
-                    ${item}
-                `;
-                learnList.appendChild(li);
-            });
-            
-            // Update videos list
-            const videoContainer = document.querySelector('#videosList');
-            videoContainer.innerHTML = '';
-            videos.forEach(video => {
-                const videoItem = document.createElement('div');
-                videoItem.className = `video-item ${video.isFree ? '' : 'locked'}`;
-                videoItem.setAttribute('data-video-id', video.videoId);
-                videoItem.onclick = video.isFree ? 
-                    () => openVideoModal(video.videoId) : 
-                    () => showLockedMessage();
-                videoItem.innerHTML = `
-                    <div class="video-icon">▶️</div>
-                    <div class="video-title">${video.title}</div>
-                    <div class="video-duration">${video.duration}</div>
-                    ${video.isFree ? 
-                        '<div class="video-free">ফ্রি</div>' : 
-                        '<div class="video-lock">🔒</div>'}
-                `;
-                videoContainer.appendChild(videoItem);
-            });
-            
-            // Update notes list
-            const notesContainer = document.querySelector('#notesList');
-            notesContainer.innerHTML = '';
-            notes.forEach(note => {
-                const noteItem = document.createElement('div');
-                noteItem.className = `note-item ${note.isFree ? '' : 'locked'}`;
-                noteItem.setAttribute('data-note-id', note.noteId);
-                noteItem.onclick = note.isFree ? 
-                    () => openNoteModal(note.noteId) : 
-                    () => showLockedMessage();
-                noteItem.innerHTML = `
-                    <div class="note-icon">📄</div>
-                    <div class="note-title">${note.title}</div>
-                    ${note.isFree ? 
-                        '<div class="note-free">ফ্রি</div>' : 
-                        '<div class="note-lock">🔒</div>'}
-                `;
-                notesContainer.appendChild(noteItem);
-            });
-            
-            // Update reviews
-            updateReviewsUI(reviews);
-        }
-
-        function updateReviewsUI(reviews) {
-            const reviewsContainer = document.querySelector('#reviewsList');
-            reviewsContainer.innerHTML = '';
-            
-            reviews.forEach(review => {
-                const reviewDiv = document.createElement('div');
-                reviewDiv.className = 'review';
-                
-                // Get first letter of name for avatar
-                const avatarLetter = review.userName ? review.userName.charAt(0) : 'U';
-                
-                // Create star rating
-                const stars = '⭐'.repeat(review.rating);
-                
-                reviewDiv.innerHTML = `
-                    <div class="review-header">
-                        <div class="reviewer-avatar">${avatarLetter}</div>
-                        <div>
-                            <div class="reviewer-name">${review.userName || 'অজানা ব্যবহারকারী'}</div>
-                            <div class="star-rating">${stars}</div>
-                        </div>
-                        <div class="review-date">${new Date(review.createdAt).toLocaleDateString('bn-BD')}</div>
-                    </div>
-                    <div class="review-text">
-                        ${review.review}
-                    </div>
-                `;
-                
-                reviewsContainer.appendChild(reviewDiv);
-            });
-        }
-
-        function updateUIAfterPurchase() {
-            // Change buy button to active course button
-            const pricingSection = document.getElementById('pricing-section');
-            pricingSection.innerHTML = `
-                <div class="active-course-badge">
-                    <i class="fas fa-check-circle"></i> আপনি এই কোর্সটি ক্রয় করেছেন
-                </div>
-                <div class="course-stats">
-                    <div class="stat-item">
-                        <span class="stat-icon">📅</span>
-                        <span>ক্রয়ের তারিখ: ${new Date().toLocaleDateString('bn-BD')}</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">👤</span>
-                        <span>ইমেইল: ${courseAccess.userEmail}</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">📺</span>
-                        <span>১০টি ভিডিও লেসন</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">⏱️</span>
-                        <span>মোট ৮ ঘন্টা</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">📄</span>
-                        <span>৮টি পিডিএফ নোট</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">🏆</span>
-                        <span>সার্টিফিকেট</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">♾️</span>
-                        <span>আজীবন এক্সেস</span>
-                    </div>
-                </div>
-            `;
-            
-            // Enable review form
-            document.getElementById('reviewForm').classList.remove('hidden');
-            
-            // Unlock all video and note items (remove locked class)
-            document.querySelectorAll('.video-item.locked').forEach(item => {
-                item.classList.remove('locked');
-                item.onclick = function() {
-                    openVideoModal(this.getAttribute('data-video-id'));
-                };
-            });
-            
-            document.querySelectorAll('.note-item.locked').forEach(item => {
-                item.classList.remove('locked');
-                item.onclick = function() {
-                    openNoteModal(this.getAttribute('data-note-id'));
-                };
-            });
-        }
-
-        function updateUIPendingVerification() {
-            const pricingSection = document.getElementById('pricing-section');
-            pricingSection.innerHTML = `
-                <div class="pending-course-badge">
-                    <i class="fas fa-clock"></i> আপনার কোর্সটি ভেরিফিকেশন প্রক্রিয়াধীন
-                </div>
-                <div class="course-stats">
-                    <div class="stat-item">
-                        <span class="stat-icon">📅</span>
-                        <span>আবেদনের তারিখ: ${new Date().toLocaleDateString('bn-BD')}</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">👤</span>
-                        <span>ইমেইল: ${courseAccess.userEmail}</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">⏳</span>
-                        <span>স্ট্যাটাস: প্রক্রিয়াধীন</span>
-                    </div>
-                </div>
-            `;
-        }
-
-        // ==============================================
-        // COURSE CONTENT PROTECTION
-        // ==============================================
+        // Video protection functions
         function disableDownloads() {
             // Disable right-click context menu on videos and PDFs
             document.addEventListener('contextmenu', function(e) {
@@ -1523,6 +1358,7 @@
             });
         }
 
+        // Show protection alert
         function showProtectionAlert() {
             const alertDiv = document.createElement('div');
             alertDiv.innerHTML = `
@@ -1553,6 +1389,7 @@
             }, 3000);
         }
 
+        // Enhanced video player with protection
         function createProtectedVideoPlayer(videoUrl, title) {
             return `
                 <div class="video-container" style="position: relative; user-select: none;">
@@ -1601,6 +1438,7 @@
             `;
         }
 
+        // Create protected PDF viewer function
         function createProtectedPdfViewer(pdfUrl, title) {
             // Generate watermark text with user info if available
             const watermarkText = courseAccess.userEmail 
@@ -1650,9 +1488,27 @@
             `;
         }
 
-        // ==============================================
-        // CORE APPLICATION FUNCTIONS
-        // ==============================================
+        // Load course access state from localStorage on page load
+        function loadCourseState() {
+            try {
+                const savedState = localStorage.getItem('courseAccess_practical_ibarot');
+                if (savedState) {
+                    courseAccess = JSON.parse(savedState);
+                }
+            } catch (error) {
+                console.log('Error loading course state:', error);
+            }
+        }
+
+        // Save course access state to localStorage
+        function saveCourseState() {
+            try {
+                localStorage.setItem('courseAccess_practical_ibarot', JSON.stringify(courseAccess));
+            } catch (error) {
+                console.log('Error saving course state:', error);
+            }
+        }
+
         // Tab functionality
         function openTab(tabName) {
             var i, tabcontent, tabs;
@@ -1964,259 +1820,317 @@
 
         // Close modal
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            
-            // Clear video/note content when modal closes
-            if (modalId === 'videoModal') {
-                document.getElementById('videoContent').innerHTML = '';
-            } else if (modalId === 'noteModal') {
-                document.getElementById('noteContent').innerHTML = '';
-            }
+            document // Clear video/note content when modal closes
+        if (modalId === 'videoModal') {
+            document.getElementById('videoContent').innerHTML = '';
+        } else if (modalId === 'noteModal') {
+            document.getElementById('noteContent').innerHTML = '';
         }
+    }
 
-        // Purchase course function
-        async function purchaseCourse() {
-            // Show loading overlay
-            const loadingOverlay = document.createElement('div');
-            loadingOverlay.className = 'loading-overlay';
-            loadingOverlay.innerHTML = `
-                <div class="loading-content">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 40px; color: var(--primary-color);"></i>
-                    <p class="loading-text">কোর্স ক্রয় প্রক্রিয়া চলছে...</p>
-                </div>
-            `;
-            document.body.appendChild(loadingOverlay);
-            
-            try {
-                const token = authService.getToken();
-                if (!token) {
-                    // Redirect to login or show login modal
-                    alert('কোর্স ক্রয় করতে লগইন করুন');
-                    return;
-                }
-
+    // Purchase course function
+    async function purchaseCourse() {
+        // Show loading overlay
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'loading-overlay';
+        loadingOverlay.innerHTML = `
+            <div class="loading-content">
+                <i class="fas fa-spinner fa-spin" style="font-size: 40px; color: var(--primary-color);"></i>
+                <p class="loading-text">কোর্স ক্রয় প্রক্রিয়া চলছে...</p>
+            </div>
+        `;
+        document.body.appendChild(loadingOverlay);
+        
+        try {
+            // Simulate payment processing (in real app, this would connect to payment gateway)
+            setTimeout(async () => {
+                // Create mock purchase data
                 const purchaseData = {
                     courseId: 'practical-ibarot',
-                    paymentMethod: 'bkash', // In real app, get from user selection
-                    transactionId: 'TXN' + Math.floor(Math.random() * 1000000),
-                    amount: 1500
+                    courseName: 'প্রাকটিকাল ইবারত শিক্ষা',
+                    amount: 1500,
+                    currency: 'BDT',
+                    userEmail: 'user@example.com', // In real app, get from form
+                    paymentMethod: 'bkash', // In real app, get from form
+                    transactionId: 'TXN' + Math.floor(Math.random() * 1000000)
                 };
                 
-                const response = await backendAPI.purchaseCourse(purchaseData, token);
+                // Call backend API to process purchase
+                const response = await backendAPI.purchaseCourse(purchaseData);
                 
-                if (response.success) {
-                    // Update course access state
-                    courseAccess = {
-                        isPurchased: false, // Will be true after verification
-                        userEmail: 'user@example.com', // Should get from user profile
-                        purchaseDate: new Date().toISOString(),
-                        isPending: true,
-                        pendingUntil: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
-                    };
-                    
-                    // Save to localStorage
-                    saveCourseState();
-                    
-                    // Update UI
-                    updateUIPendingVerification();
-                    
-                    // Show success message
-                    alert('আপনার পেমেন্ট সফলভাবে প্রক্রিয়াধীন হয়েছে। পেমেন্ট ভেরিফিকেশনের পর কোর্সটি সক্রিয় হবে।');
-                } else {
-                    throw new Error(response.message || 'পেমেন্ট প্রক্রিয়ায় সমস্যা হয়েছে');
-                }
+                // Update course access state
+                courseAccess = {
+                    isPurchased: true,
+                    userEmail: purchaseData.userEmail,
+                    purchaseDate: new Date().toISOString(),
+                    isPending: false,
+                    pendingUntil: null
+                };
                 
-            } catch (error) {
-                alert(error.message || 'কোর্স ক্রয় প্রক্রিয়ায় সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।');
-                console.error('Purchase error:', error);
-            } finally {
+                // Save to localStorage
+                saveCourseState();
+                
+                // Update UI
+                updateUIAfterPurchase();
+                
                 // Hide loading overlay
-                if (loadingOverlay.parentNode) {
-                    document.body.removeChild(loadingOverlay);
-                }
-            }
-        }
-
-        // Handle manual payment form submission
-        document.getElementById('manualPaymentForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+                document.body.removeChild(loadingOverlay);
+                
+                // Show success message
+                alert('কোর্সটি সফলভাবে ক্রয় করা হয়েছে! এখন আপনি সকল কন্টেন্ট অ্যাক্সেস করতে পারবেন।');
+                
+            }, 2000); // Simulate 2 second delay for payment processing
             
-            const formData = new FormData(this);
-            const paymentData = {
-                transactionId: formData.get('txnId'),
-                paymentMethod: formData.get('paymentMethod'),
-                amount: 1500,
-                courseId: formData.get('courseId')
+        } catch (error) {
+            // Hide loading overlay
+            document.body.removeChild(loadingOverlay);
+            
+            // Show error message
+            alert('কোর্স ক্রয় প্রক্রিয়ায় সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।');
+            console.error('Purchase error:', error);
+        }
+    }
+
+    // Update UI after purchase
+    function updateUIAfterPurchase() {
+        // Change buy button to active course button
+        const pricingSection = document.getElementById('pricing-section');
+        pricingSection.innerHTML = `
+            <div class="active-course-badge">
+                <i class="fas fa-check-circle"></i> আপনি এই কোর্সটি ক্রয় করেছেন
+            </div>
+            <div class="course-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">📅</span>
+                    <span>ক্রয়ের তারিখ: ${new Date().toLocaleDateString('bn-BD')}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">👤</span>
+                    <span>ইমেইল: ${courseAccess.userEmail}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📺</span>
+                    <span>১০টি ভিডিও লেসন</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">⏱️</span>
+                    <span>মোট ৮ ঘন্টা</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📄</span>
+                    <span>৮টি পিডিএফ নোট</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🏆</span>
+                    <span>সার্টিফিকেট</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">♾️</span>
+                    <span>আজীবন এক্সেস</span>
+                </div>
+            </div>
+        `;
+        
+        // Enable review form
+        document.getElementById('reviewForm').classList.remove('hidden');
+        
+        // Unlock all video and note items (remove locked class)
+        document.querySelectorAll('.video-item.locked').forEach(item => {
+            item.classList.remove('locked');
+            item.onclick = function() {
+                openVideoModal(this.getAttribute('data-video-id'));
+            };
+        });
+        
+        document.querySelectorAll('.note-item.locked').forEach(item => {
+            item.classList.remove('locked');
+            item.onclick = function() {
+                openNoteModal(this.getAttribute('data-note-id'));
+            };
+        });
+    }
+
+    // Handle manual payment form submission
+    document.getElementById('manualPaymentForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const paymentData = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            txnId: formData.get('txnId'),
+            paymentMethod: formData.get('paymentMethod'),
+            courseId: formData.get('courseId'),
+            amount: 1500,
+            currency: 'BDT'
+        };
+        
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'প্রক্রিয়াধীন... <span class="loading-spinner"></span>';
+        submitBtn.disabled = true;
+        
+        try {
+            // In real app, this would call backend API
+            await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+            
+            // Update course access state (pending until verification)
+            courseAccess = {
+                isPurchased: false,
+                userEmail: paymentData.email,
+                purchaseDate: null,
+                isPending: true,
+                pendingUntil: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() // 24 hours from now
             };
             
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'প্রক্রিয়াধীন... <span class="loading-spinner"></span>';
-            submitBtn.disabled = true;
+            saveCourseState();
             
-            try {
-                const token = authService.getToken();
-                if (!token) {
-                    throw new Error('লগইন প্রয়োজন');
-                }
-                
-                const response = await backendAPI.verifyPayment(paymentData, token);
-                
-                if (response.success) {
-                    // Update course access state
-                    courseAccess = {
-                        isPurchased: true,
-                        userEmail: formData.get('email'),
-                        purchaseDate: new Date().toISOString(),
-                        isPending: false,
-                        pendingUntil: null
-                    };
-                    
-                    saveCourseState();
-                    
-                    // Show success message
-                    document.getElementById('paymentMessage').innerHTML = `
-                        <div class="success">
-                            <i class="fas fa-check-circle"></i> আপনার পেমেন্ট সফলভাবে ভেরিফাই হয়েছে। 
-                            এখন আপনি সকল কোর্স কন্টেন্ট অ্যাক্সেস করতে পারবেন।
-                        </div>
-                    `;
-                    
-                    // Close modal after 3 seconds and refresh UI
-                    setTimeout(() => {
-                        closeModal('lockedModal');
-                        document.getElementById('paymentMessage').innerHTML = '';
-                        updateUIAfterPurchase();
-                    }, 3000);
-                } else {
-                    throw new Error(response.message || 'পেমেন্ট ভেরিফিকেশনে সমস্যা হয়েছে');
-                }
-                
-            } catch (error) {
-                document.getElementById('paymentMessage').innerHTML = `
-                    <div class="error">
-                        <i class="fas fa-exclamation-circle"></i> ${error.message || 'পেমেন্ট জমা দিতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।'}
-                    </div>
-                `;
-                console.error('Payment submission error:', error);
-            } finally {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Submit review function
-        async function submitReview() {
-            const rating = document.getElementById('rating').value;
-            const reviewText = document.getElementById('reviewText').value.trim();
+            // Show success message
+            document.getElementById('paymentMessage').innerHTML = `
+                <div class="success">
+                    <i class="fas fa-check-circle"></i> আপনার পেমেন্ট তথ্য সফলভাবে জমা হয়েছে। 
+                    পেমেন্ট ভেরিফিকেশনের পর কোর্সটি একটিভ হবে (২৪ ঘন্টার মধ্যে)।
+                </div>
+            `;
             
-            if (!rating) {
-                alert('অনুগ্রহ করে রেটিং নির্বাচন করুন');
-                return;
-            }
+            // Close modal after 3 seconds
+            setTimeout(() => {
+                closeModal('lockedModal');
+                document.getElementById('paymentMessage').innerHTML = '';
+                
+                // Update UI to show pending state
+                updateUIPendingVerification();
+            }, 3000);
             
-            if (!reviewText) {
-                alert('অনুগ্রহ করে আপনার রিভিউ লিখুন');
-                return;
-            }
-            
-            try {
-                const token = authService.getToken();
-                if (!token) {
-                    throw new Error('রিভিউ জমা দিতে লগইন করুন');
-                }
-                
-                const reviewData = {
-                    courseId: 'practical-ibarot',
-                    rating: parseInt(rating),
-                    review: reviewText
-                };
-                
-                const response = await backendAPI.submitReview(reviewData, token);
-                
-                if (response.success) {
-                    alert('আপনার রিভিউ সফলভাবে জমা হয়েছে!');
-                    
-                    // Clear form
-                    document.getElementById('rating').value = '';
-                    document.getElementById('reviewText').value = '';
-                    
-                    // Refresh reviews
-                    const reviews = await backendAPI.getCourseReviews('practical-ibarot');
-                    updateReviewsUI(reviews);
-                } else {
-                    throw new Error(response.message || 'রিভিউ জমা দিতে সমস্যা হয়েছে');
-                }
-                
-            } catch (error) {
-                alert(error.message || 'রিভিউ জমা দিতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।');
-                console.error('Review submission error:', error);
-            }
+        } catch (error) {
+            document.getElementById('paymentMessage').innerHTML = `
+                <div class="error">
+                    <i class="fas fa-exclamation-circle"></i> পেমেন্ট জমা দিতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।
+                </div>
+            `;
+            console.error('Payment submission error:', error);
+        } finally {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
         }
+    });
 
-        // Initialize the page
-        async function init() {
-            // Load course access state
-            loadCourseState();
-            
-            // Check authentication
-            if (!authService.isAuthenticated()) {
-                // Redirect to login or show login modal
-                console.log('User not authenticated');
-            }
-            
-            try {
-                // Fetch course data
-                const courseId = 'practical-ibarot';
-                const [courseDetails, videos, notes, reviews] = await Promise.all([
-                    backendAPI.getCourseDetails(courseId),
-                    backendAPI.getCourseVideos(courseId),
-                    backendAPI.getCourseNotes(courseId),
-                    backendAPI.getCourseReviews(courseId)
-                ]);
-                
-                // Update UI with fetched data
-                updateCourseUI(courseDetails, videos, notes, reviews);
-                
-                // Check course access
-                const token = authService.getToken();
-                if (token) {
-                    const access = await backendAPI.checkCourseAccess(courseId, token);
-                    if (access.hasAccess) {
-                        courseAccess.isPurchased = true;
-                        updateUIAfterPurchase();
-                    } else if (access.status === 'pending') {
-                        courseAccess.isPending = true;
-                        updateUIPendingVerification();
-                    }
-                }
-                
-                // Set up content protection
-                disableDownloads();
-                
-                // Close modals when clicking outside
-                window.onclick = function(event) {
-                    if (event.target.className === 'modal') {
-                        event.target.style.display = 'none';
-                        
-                        // Clear video/note content when modal closes
-                        if (event.target.id === 'videoModal') {
-                            document.getElementById('videoContent').innerHTML = '';
-                        } else if (event.target.id === 'noteModal') {
-                            document.getElementById('noteContent').innerHTML = '';
-                        }
-                    }
-                };
-            } catch (error) {
-                console.error('Initialization error:', error);
-                // Show error to user
-                alert('কোর্স ডেটা লোড করতে সমস্যা হয়েছে। অনুগ্রহ করে পৃষ্ঠাটি রিফ্রেশ করুন।');
-            }
+    // Update UI for pending verification state
+    function updateUIPendingVerification() {
+        const pricingSection = document.getElementById('pricing-section');
+        pricingSection.innerHTML = `
+            <div class="pending-course-badge">
+                <i class="fas fa-clock"></i> আপনার কোর্সটি ভেরিফিকেশন প্রক্রিয়াধীন
+            </div>
+            <div class="course-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">📅</span>
+                    <span>আবেদনের তারিখ: ${new Date().toLocaleDateString('bn-BD')}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">👤</span>
+                    <span>ইমেইল: ${courseAccess.userEmail}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">⏳</span>
+                    <span>স্ট্যাটাস: প্রক্রিয়াধীন</span>
+                </div>
+            </div>
+        `;
+    }
+
+    // Submit review function
+    async function submitReview() {
+        const rating = document.getElementById('rating').value;
+        const reviewText = document.getElementById('reviewText').value.trim();
+        
+        if (!rating) {
+            alert('অনুগ্রহ করে রেটিং নির্বাচন করুন');
+            return;
         }
+        
+        if (!reviewText) {
+            alert('অনুগ্রহ করে আপনার রিভিউ লিখুন');
+            return;
+        }
+        
+        const reviewData = {
+            courseId: 'practical-ibarot',
+            rating: parseInt(rating),
+            review: reviewText,
+            userName: 'Current User', // In real app, get from user profile
+            userEmail: courseAccess.userEmail || 'anonymous@example.com'
+        };
+        
+        try {
+            // Call backend API to submit review
+            const response = await backendAPI.submitReview(reviewData);
+            
+            // Show success message
+            alert('আপনার রিভিউ সফলভাবে জমা হয়েছে!');
+            
+            // Clear form
+            document.getElementById('rating').value = '';
+            document.getElementById('reviewText').value = '';
+            
+            // Refresh reviews (in real app, would fetch from backend)
+            location.reload();
+            
+        } catch (error) {
+            alert('রিভিউ জমা দিতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।');
+            console.error('Review submission error:', error);
+        }
+    }
 
-        // Initialize when page loads
-        window.onload = init;
-    </script>
+    // Handle API errors
+    function handleApiError(error) {
+        // In a real app, would show user-friendly error messages
+        console.error('API Error:', error);
+        
+        // Show error to user
+        alert('সিস্টেমে একটি সমস্যা হয়েছে। অনুগ্রহ করে কিছুক্ষণ পর আবার চেষ্টা করুন।');
+    }
+
+    // Initialize the page
+    function init() {
+        // Load course access state
+        loadCourseState();
+        
+        // Check if user has purchased the course
+        if (courseAccess.isPurchased) {
+            updateUIAfterPurchase();
+        } else if (courseAccess.isPending) {
+            updateUIPendingVerification();
+        }
+        
+        // Set up content protection
+        disableDownloads();
+        
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+                
+                // Clear video/note content when modal closes
+                if (event.target.id === 'videoModal') {
+                    document.getElementById('videoContent').innerHTML = '';
+                } else if (event.target.id === 'noteModal') {
+                    document.getElementById('noteContent').innerHTML = '';
+                }
+            }
+        };
+    }
+
+    // Initialize when page loads
+    window.onload = init;
+</script>
+
+
+
+
 </body>
 </html>
+
+            
