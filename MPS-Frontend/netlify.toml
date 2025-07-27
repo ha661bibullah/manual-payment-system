@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/"
+  to = "/CourseDetails.html"
+  status = 200
+git add .
+git commit -m "আপডেট ফাইল পুশ করা হয়েছে"
+git push -u origin main
